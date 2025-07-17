@@ -1,0 +1,12 @@
+{
+  "total_feedback": 1,
+  "accurate_predictions": 1,
+  "inaccurate_predictions": 0,
+  "accuracy_rate": 1.0,
+  "high_confidence_errors": 0,
+  "sentiment_distribution": {
+    "LABEL_0": 0,
+    "LABEL_1": 0,
+    "LABEL_2": 1
+  }
+}
