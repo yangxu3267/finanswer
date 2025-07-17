@@ -28,11 +28,11 @@
 
 ### Main Interface
 ![Finanswer Main Interface](docs/screenshots/main_interface.png)
-*Clean, modern dark-themed interface with "Analyze Current Page" button and BERT model indicator*
+Clean, modern dark-themed interface with "Analyze Current Page" button and BERT model indicator
 
 ### Detailed Analysis
 ![Finanswer Detailed Analysis](docs/screenshots/detailed_analysis.png)
-*Comprehensive sentiment analysis showing "Positive (33.7%)" results with sentiment spectrum bar, AI-generated summary, investment insights, and user feedback system*
+Comprehensive sentiment analysis showing "Positive (33.7%)" results with sentiment spectrum bar, AI-generated summary, investment insights, and user feedback system
 
 ## 🚀 Quick Start
 
