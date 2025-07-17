@@ -1,0 +1,7 @@
+flask==2.3.3
+flask-cors==4.0.0
+tensorflow>=2.16.0
+transformers>=4.35.0
+numpy>=1.24.0
+requests>=2.31.0
+gunicorn==20.1.0 
