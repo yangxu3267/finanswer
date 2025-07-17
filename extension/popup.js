@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     analyzeBtn.disabled = true;
     loading.style.display = 'block';
     result.style.display = 'none';
+<<<<<<< HEAD
     
     try {
       const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -70,6 +71,22 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       showError(userMessage);
+=======
+    try {
+      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      const response = await chrome.tabs.sendMessage(tab.id, { action: 'extractText' });
+      if (response && response.text) {
+        const sentimentResult = await chrome.runtime.sendMessage({
+          action: 'analyzeSentiment',
+          text: response.text
+        });
+        displayResult(sentimentResult);
+      } else {
+        throw new Error('No text content found on this page');
+      }
+    } catch (error) {
+      showError('Could not analyze this page. Please try on a page with financial content.');
+>>>>>>> 19f0d3a5886c124d05ccfac9814d3ad81dbe8263
     } finally {
       loading.style.display = 'none';
       analyzeBtn.disabled = false;
@@ -97,7 +114,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // 主分数高亮
     mainScore.textContent = `${readableLabel} (${confidencePercent}%)`;
     mainScore.className = 'main-score ' + readableLabel.toLowerCase();
+<<<<<<< HEAD
     
+=======
+>>>>>>> 19f0d3a5886c124d05ccfac9814d3ad81dbe8263
     // 进度条指针
     let position;
     if (label === 'LABEL_0') {
@@ -108,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
       position = 67 + (scores.positive * 33);
     }
     meterPointer.style.left = `${position}%`;
+<<<<<<< HEAD
     meterPointer.style.display = 'block'; // Show meter pointer for successful analysis
     
     // 摘要和建议
@@ -139,6 +160,23 @@ document.addEventListener('DOMContentLoaded', function() {
     resetFeedbackButtons();
     feedbackUp.style.display = 'none';
     feedbackDown.style.display = 'none';
+=======
+    // 摘要和建议
+    newsSummary.textContent = summary || '';
+    investmentAdvice.textContent = investment_advice || '';
+    result.style.display = 'block';
+    
+    // 重置反馈按钮状态
+    resetFeedbackButtons();
+  }
+
+  function showError(message) {
+    mainScore.textContent = 'Error';
+    mainScore.className = 'main-score negative';
+    newsSummary.textContent = message;
+    investmentAdvice.textContent = 'Unable to provide investment advice due to analysis error.';
+    result.style.display = 'block';
+>>>>>>> 19f0d3a5886c124d05ccfac9814d3ad81dbe8263
   }
   
   // 反馈按钮事件监听器

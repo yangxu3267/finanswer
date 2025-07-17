@@ -40,10 +40,16 @@ Thumbs.db
 *.log
 logs/
 
+<<<<<<< HEAD
 # Model files (too large for git)
 models/finbert/*.h5
 models/finbert/*.bin
 models/finbert/*.safetensors
+=======
+# Model files (if too large)
+# models/finbert/*.h5
+# models/finbert/*.bin
+>>>>>>> 19f0d3a5886c124d05ccfac9814d3ad81dbe8263
 
 # Feedback data (optional - you might want to keep this)
 # feedback_data/*.json
@@ -54,4 +60,8 @@ models/finbert/*.safetensors
 
 # Temporary files
 *.tmp
+<<<<<<< HEAD
 *.temp
+=======
+*.temp models/finbert/tf_model.h5
+>>>>>>> 19f0d3a5886c124d05ccfac9814d3ad81dbe8263

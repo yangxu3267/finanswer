@@ -10,6 +10,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 async function analyzeSentiment(text) {
   try {
+<<<<<<< HEAD
     // First check if server is running
     const healthCheck = await fetch('http://localhost:5001/health', {
       method: 'GET',
@@ -20,6 +21,8 @@ async function analyzeSentiment(text) {
       throw new Error('Server is not running. Please start the Finanswer backend server first.');
     }
 
+=======
+>>>>>>> 19f0d3a5886c124d05ccfac9814d3ad81dbe8263
     const response = await fetch('http://localhost:5001/analyze', {
       method: 'POST',
       headers: {
@@ -29,6 +32,7 @@ async function analyzeSentiment(text) {
     });
 
     if (!response.ok) {
+<<<<<<< HEAD
       if (response.status === 404) {
         throw new Error('Analysis endpoint not found. Please check server configuration.');
       } else if (response.status === 500) {
@@ -38,6 +42,9 @@ async function analyzeSentiment(text) {
       } else {
         throw new Error(`Server error (${response.status}). Please try again.`);
       }
+=======
+      throw new Error(`HTTP error! status: ${response.status}`);
+>>>>>>> 19f0d3a5886c124d05ccfac9814d3ad81dbe8263
     }
 
     const result = await response.json();
@@ -46,6 +53,7 @@ async function analyzeSentiment(text) {
       throw new Error(result.error);
     }
 
+<<<<<<< HEAD
     // Validate response structure
     if (!result.label || !result.confidence) {
       throw new Error('Invalid response from server. Please try again.');
@@ -63,12 +71,19 @@ async function analyzeSentiment(text) {
     } else {
       throw new Error(error.message || 'Failed to analyze sentiment. Please try again.');
     }
+=======
+    return result;
+  } catch (error) {
+    console.error('Error calling sentiment analysis API:', error);
+    throw new Error('Failed to analyze sentiment. Please make sure the server is running.');
+>>>>>>> 19f0d3a5886c124d05ccfac9814d3ad81dbe8263
   }
 }
 
 // Check server health on startup
 chrome.runtime.onStartup.addListener(async () => {
   try {
+<<<<<<< HEAD
     const response = await fetch('http://localhost:5001/health', {
       method: 'GET',
       timeout: 5000
@@ -97,5 +112,13 @@ chrome.runtime.onInstalled.addListener(async () => {
     }
   } catch (error) {
     console.warn('⚠️ Finanswer server is not running. Please start the server first.');
+=======
+    const response = await fetch('http://localhost:5001/health');
+    if (response.ok) {
+      console.log('FinBERT server is running');
+    }
+  } catch (error) {
+    console.warn('FinBERT server is not running. Please start the server first.');
+>>>>>>> 19f0d3a5886c124d05ccfac9814d3ad81dbe8263
   }
 }); 
