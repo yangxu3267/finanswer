@@ -24,7 +24,6 @@
 - **🎨 Modern UI**: Beautiful glassmorphism design with real-time sentiment meter
 - **📈 Performance Tracking**: Built-in analytics and model performance monitoring
 
-<<<<<<< HEAD
 ## 📸 Screenshots
 
 ### Main Interface
@@ -35,8 +34,6 @@
 ![Finanswer Detailed Analysis](docs/screenshots/detailed_analysis.png)
 *Comprehensive sentiment analysis showing "Positive (33.7%)" results with sentiment spectrum bar, AI-generated summary, investment insights, and user feedback system*
 
-=======
->>>>>>> 19f0d3a5886c124d05ccfac9814d3ad81dbe8263
 ## 🚀 Quick Start
 
 ### Option 1: Chrome Web Store (Coming Soon)
